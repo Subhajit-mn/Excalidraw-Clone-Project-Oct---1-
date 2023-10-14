@@ -1,0 +1,21 @@
+
+.dropdown{
+    display: inline-block;
+    position: relative;
+}
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+.dropdown-menu a{
+    display: block;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
