@@ -1,160 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Excalidraw-Clone</title>
-  <link rel="stylesheet" href="./style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <title>Excalidraw</title>
 </head>
+
 <body>
-  <nav class="navbar">
-    <div class="dropdown">
-      <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-folder"></i> Open</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-down-to-bracket"></i> Save to...</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-light fa-image"></i> Export image...</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-thin fa-family"></i> Live collaboration...</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-light fa-circle-question"></i> Help</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-light fa-trash-can"></i> Reset the canvas</a></li>
-        <hr>
-        <li><a class="dropdown-item" href="#"><i class="fa-light fa-gift"></i> Excalidraw+</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-brands fa-github"></i> Github</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-brands fa-discord"></i> Discord</a></li>
-        <li><a class="dropdown-item" href="#"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
-        <hr>
-        <li><a class="dropdown-item" href="#"><i class="fa-thin fa-moon"></i> Dark mode</a></li>
-        <li>
-          <form class="d-flex" role="search">
-            <select name="language" id="language" class="form-select">
-              <option value="english" selected>English</option>
-              <option value="hindi">Hindi</option>
-              <option value="bahasa-indonesia">Bahasa Indonesia</option>
-              <option value="catalia">Catalia</option>
-              <option value="deutsch">Deutsch</option>
-              <option value="espanol">Espanol</option>
-              <option value="euskara">Euskara</option>
-              <option value="francais">Francais</option>
-              <option value="galego">Galego</option>
-              <option value="italiano">italiano</option>
-              <option value="kurdi">Kurdi</option>
-              <option value="latviesu">Latviesu</option>
-              <option value="norsk-bokmal">Norsk bokmal</option>
-              <option value="occitan">Occitan</option>
-              <option value="polski">Polski</option>
-              <option value="portugues">Portugues</option>
-              <option value="portugues-brasileiro">Portugues Brasileiro</option>
-              <option value="romana">Romana</option>
-              <option value="slovencina">Slovencina</option>
-              <option value="slovenscina">Slovenscina</option>
-              <option value="suomi">Suomi</option>
-              <option value="svenska">Svenska</option>
-              <option value="taqbaylit">Taqbaylit</option>
-              <option value="turkce">Turkce</option>
-              <option value="cesky">Cesky</option>
-              <option value="eyynvika">Eyynvika</option>
-              <option value="pyccknn">Pyccknn</option>
-              <option value="ykpaihcbka">Ykpaihcbka</option>
-            </select>
-          </form>
-        </li>
-        <li class="nav-item mb-2">
-          <form>
-            <label for="canvas-background" class="form-label"
-              >Canvas Background</label
-            >
-            <div class="radio-container">
-              <input
-                type="radio"
-                id="radio1"
-                name="background"
-                value="color1"
-              />
-              <label for="radio1" class="radio-label"></label>
-              <input
-                type="radio"
-                id="radio2"
-                name="background"
-                value="color2"
-              />
-              <label for="radio2" class="radio-label"></label>
-              <input
-                type="radio"
-                id="radio3"
-                name="background"
-                value="color3"
-              />
-              <label for="radio3" class="radio-label"></label>
-              <input
-                type="radio"
-                id="radio4"
-                name="background"
-                value="color4"
-              />
-              <label for="radio4" class="radio-label"></label>
-              <input
-                type="radio"
-                id="radio5"
-                name="background"
-                value="color5"
-              />
-              <label for="radio5" class="radio-label"></label>
-              <button class="color-picker__button active" type="button" title="#ffffff" style="--swatch-color: #ffffff;"><div class="color-picker__button-outline"></div></button>
+    <main id="main">
+        <div class="nav">
+            <div class="menu">
+                <button><i class="fa-solid fa-bars"></i></button>
             </div>
-          </form>
-        </li>
-      </ul>
-    </div>
-    <div class="tools">
-      <a href="#"><i class="fa-light fa-unlock"></i></a>
-      <a href="#"><i class="fa-light fa-rectangle-wide"></i></a>
-      <a href="#"><i class="fa-light fa-diamond"></i></a>
-      <a href="#"><i class="fa-light fa-circle"></i></a>
-      <a href="#"><i class="fa-light fa-arrow-right"></i></a>
-      <a href="#"><i class="fa-regular fa-minus"></i></a>
-      <a href="#"><i class="fa-light fa-pen"></i></a>
-      <a href="#"><i class="fa-solid fa-a"></i></a>
-      <a href="#"><i class="fa-light fa-image"></i></a>
-      <a href="#"><i class="fa-light fa-eraser"></i></a>
-      <a href="#"><i class="fa-light fa-frame"></i></a>
-      <a href="#"><i class="fa-light fa-less-than"></i><i class="fa-light fa-greater-than"></i></a>
-    </div>
-    <div class="library">
-      <button class="btn-1"><a href="#"><i class="fa-light fa-family" style="color: #ffffff;"></i></i></a></button>
-      <button class="btn-2"><a href="#"><i class="fa-light fa-book-open"></i> Library</a></button>
-    </div>
-  </nav>
-  <div class="middle">
-    <div class="logo">
-      <img src="./logo.jpg" height="80px" width="80px">
-      <h1>EXCALIDRAW</h1>
-    </div>
-    <div class="middle-content">
-      <a href="#"><i class="fa-light fa-folder"></i> Open</a>
-      <a href="#"><i class="fa-light fa-circle-question"></i> Help</a>
-      <a href="#"><i class="fa-light fa-user-group"></i> Live collaboration...</a>
-      <a href="#"><i class="fa-light fa-gift"></i> Try Excalidraw Plus!</a>
-    </div>
-  </div>
-  <footer>
-    <div class="footer-div-1">
-      <button class="zoom">-    100%    +</button>
-      <button class="undo-redo"><i class="fa-light fa-arrow-rotate-left"></i> <i class="fa-light fa-arrow-rotate-right"></i></button>
-    </div>
-    <div class="footer-div-2">
-      <a><i class="fa-duotone fa-shield-halved"></i></a>
-      <button><i class="fa-light fa-circle-question"></i></button>
-    </div>
-  </footer>
-  
 
+            <div class="tool-box">
+                <div class="tool-container">
 
-  <script src="./script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+                    <button class="tool" id="lock"><i class="fa-solid fa-unlock-keyhole"></i></button>
+
+                    <div class="hr_divider"></div>
+
+                    <button class="tool" id="hand"><i id="grab" class="fa-regular fa-hand"></i></button>
+
+                    <button class="tool" id="pointer"><i class="fa-solid fa-arrow-pointer"></i></button>
+
+                    <button class="tool" id="square"><i class="fa-regular fa-square"></i></button>
+
+                    <button class="tool" id="diamond"><i class="fa-regular fa-square diamond"></i></button>
+
+                    <button class="tool" id="circle"><i class="fa-regular fa-circle"></i></button>
+
+                    <button class="tool" id="arrow"><i class="fa-solid fa-arrow-right"></i></button>
+
+                    <button class="tool" id="line"><i class="fa-solid fa-minus"></i></button>
+
+                    <button class="tool" id="pencil"><i class="fa-solid fa-pencil"></i></button>
+
+                    <button class="tool" id="text"><i class="fa-solid fa-font"></i></button>
+
+                    <button class="tool" id="image"><i class="fa-regular fa-image"></i></button>
+
+                    <button class="tool" id="eraser"><i id="clear" class="fa-solid fa-eraser"></i></button>
+
+                    <div class="hr_divider"></div>
+
+                    <button class="tool" id="more"><i class="fa-solid fa-shapes"></i></button>
+
+                </div>
+            </div>
+            <div class="btn">
+                <button class="user"><i class="fa-regular fa-user"></i></button>
+                <button class="lib"><i class="fa-solid fa-book"></i> &nbsp;Library</button>
+            </div>
+        </div>
+
+        <div class="color-palette">
+            <div class="stroke">
+                <label class="title">Stroke</label>
+                <ul class="options">
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="hr_divider"></li>
+                    <li class="option">
+                        <input type="color" id="color-picker" value="#000000">
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-color">
+                <label class="title">Background</label>
+                <ul class="options">
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="hr_divider"></li>
+                    <li class="option">
+                        <input type="color" id="bgColor-picker" value="#000">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="fill-color">
+                <input type="checkbox" id="fill-color">
+                <label for="fill-color">Fill Color</label>
+            </div>
+
+            <div class="stroke-width">
+                <label class="title">Stroke Width</label>
+                <div class="stroke-btn">
+                    <button class="width-btn active" id="small"><i class="fa-solid fa-minus" style="font-size: 10px;"></i></button>
+                    <button class="width-btn" id="mid"><i class="fa-solid fa-minus" style="font-size: 15px;"></i></button>
+                    <button class="width-btn" id="thick"><i class="fa-solid fa-minus"style="font-size: 20px;"></i></button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="foot">
+            <div class="foot-left">
+                <div class="zoom-div">
+                    <div id="zoom-out" class="decrease"><i class="fa-solid fa-minus"></i></i></div>
+                   
+                    <div class="percentage">100%</div>
+                    <div id="zoom-in" class="increase"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="undo-redo-div">
+                    <div id="undo" class="undo">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </div>
+                    <div id="redo" class="redo">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="foot-right">
+                <div class="encript">
+                    <i class="fa-solid fa-shield-heart" style="color: #6965db; cursor: pointer"></i>
+                </div>
+                <div class="help">
+                    <i class="fa-regular fa-circle-question"></i>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="canvas"></canvas>
+    </main>
+
+    <script src="./script.js"></script>
+    <script src="./undo&redo.js"></script>
+    <script src="./eraser.js"></script>
 </body>
+
 </html>
