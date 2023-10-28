@@ -1,50 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excalidraw Clone</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excalidraw-Clone</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="navbar">
-        <div class="dropdown">
-            <button>Dropdown</button>
-            <div class="dropdown-menu">
-                <a href="#">Open</a>
-                <a href="#">Save to...</a>
-                <a href="#">Export image...</a>
-                <a href="#">Live collaboration...</a>
-                <a href="#">Help</a></li>
-                    <hr>
-                <a href="#">Excalidraw+</a>
-                <a href="#">Github</a>
-                <a href="#">Discord</a>
-                <a href="#">Twotter</a>
-                    <hr>
-                <a href="#">Dark mode</a>
+  <nav class="navbar">
+    <div class="dropdown">
+      <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-folder"></i> Open</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-down-to-bracket"></i> Save to...</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa-light fa-image"></i> Export image...</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa-thin fa-family"></i> Live collaboration...</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa-light fa-circle-question"></i> Help</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa-light fa-trash-can"></i> Reset the canvas</a></li>
+        <hr>
+        <li><a class="dropdown-item" href="#"><i class="fa-light fa-gift"></i> Excalidraw+</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa-brands fa-github"></i> Github</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa-brands fa-discord"></i> Discord</a></li>
+        <li><a class="dropdown-item" href="#"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+        <hr>
+        <li><a class="dropdown-item" href="#"><i class="fa-thin fa-moon"></i> Dark mode</a></li>
+        <li>
+          <form class="d-flex" role="search">
+            <select name="language" id="language" class="form-select">
+              <option value="english" selected>English</option>
+              <option value="hindi">Hindi</option>
+              <option value="bahasa-indonesia">Bahasa Indonesia</option>
+              <option value="catalia">Catalia</option>
+              <option value="deutsch">Deutsch</option>
+              <option value="espanol">Espanol</option>
+              <option value="euskara">Euskara</option>
+              <option value="francais">Francais</option>
+              <option value="galego">Galego</option>
+              <option value="italiano">italiano</option>
+              <option value="kurdi">Kurdi</option>
+              <option value="latviesu">Latviesu</option>
+              <option value="norsk-bokmal">Norsk bokmal</option>
+              <option value="occitan">Occitan</option>
+              <option value="polski">Polski</option>
+              <option value="portugues">Portugues</option>
+              <option value="portugues-brasileiro">Portugues Brasileiro</option>
+              <option value="romana">Romana</option>
+              <option value="slovencina">Slovencina</option>
+              <option value="slovenscina">Slovenscina</option>
+              <option value="suomi">Suomi</option>
+              <option value="svenska">Svenska</option>
+              <option value="taqbaylit">Taqbaylit</option>
+              <option value="turkce">Turkce</option>
+              <option value="cesky">Cesky</option>
+              <option value="eyynvika">Eyynvika</option>
+              <option value="pyccknn">Pyccknn</option>
+              <option value="ykpaihcbka">Ykpaihcbka</option>
+            </select>
+          </form>
+        </li>
+        <li class="nav-item mb-2">
+          <form>
+            <label for="canvas-background" class="form-label"
+              >Canvas Background</label
+            >
+            <div class="radio-container">
+              <input
+                type="radio"
+                id="radio1"
+                name="background"
+                value="color1"
+              />
+              <label for="radio1" class="radio-label"></label>
+              <input
+                type="radio"
+                id="radio2"
+                name="background"
+                value="color2"
+              />
+              <label for="radio2" class="radio-label"></label>
+              <input
+                type="radio"
+                id="radio3"
+                name="background"
+                value="color3"
+              />
+              <label for="radio3" class="radio-label"></label>
+              <input
+                type="radio"
+                id="radio4"
+                name="background"
+                value="color4"
+              />
+              <label for="radio4" class="radio-label"></label>
+              <input
+                type="radio"
+                id="radio5"
+                name="background"
+                value="color5"
+              />
+              <label for="radio5" class="radio-label"></label>
+              <button class="color-picker__button active" type="button" title="#ffffff" style="--swatch-color: #ffffff;"><div class="color-picker__button-outline"></div></button>
             </div>
-        </div>
-        <div>
-            <a href="#"><i class="fa-regular fa-unlock-keyhole"></i></a>
-            <a href="#"><i class="fa-light fa-hand"></i></a>
-            <a href="#"><i class="fa-duotone fa-arrow-pointer"></i></a>
-            <a href="#"><i class="fa-light fa-rectangle"></i></a>
-            <a href="#"><i class="fa-light fa-diamond"></i></a>
-            <a href="#"><i class="fa-light fa-circle"></i></a>
-            <a href="#"><i class="fa-sharp fa-light fa-arrow-right"></i></a>
-            <a href="#"><i class="fa-light fa-minus"></i></a>
-            <a href="#"><i class="fa-light fa-pencil"></i></a>
-            <a href="#"><i class="fa-regular fa-font"></i></a>
-            <a href="#"><i class="fa-light fa-image"></i></a>
-            <a href="#"><i class="fa-light fa-eraser"></i></a>
-        </div>
-        <div></div>
+          </form>
+        </li>
+      </ul>
     </div>
+    <div class="tools">
+      <a href="#"><i class="fa-light fa-unlock"></i></a>
+      <a href="#"><i class="fa-light fa-rectangle-wide"></i></a>
+      <a href="#"><i class="fa-light fa-diamond"></i></a>
+      <a href="#"><i class="fa-light fa-circle"></i></a>
+      <a href="#"><i class="fa-light fa-arrow-right"></i></a>
+      <a href="#"><i class="fa-regular fa-minus"></i></a>
+      <a href="#"><i class="fa-light fa-pen"></i></a>
+      <a href="#"><i class="fa-solid fa-a"></i></a>
+      <a href="#"><i class="fa-light fa-image"></i></a>
+      <a href="#"><i class="fa-light fa-eraser"></i></a>
+      <a href="#"><i class="fa-light fa-frame"></i></a>
+      <a href="#"><i class="fa-light fa-less-than"></i><i class="fa-light fa-greater-than"></i></a>
+    </div>
+    <div class="library">
+      <button class="btn-1"><a href="#"><i class="fa-light fa-family" style="color: #ffffff;"></i></i></a></button>
+      <button class="btn-2"><a href="#"><i class="fa-light fa-book-open"></i> Library</a></button>
+    </div>
+  </nav>
+  <div class="middle">
+    <div class="logo">
+      <img src="./logo.jpg" height="80px" width="80px">
+      <h1>EXCALIDRAW</h1>
+    </div>
+    <div class="middle-content">
+      <a href="#"><i class="fa-light fa-folder"></i> Open</a>
+      <a href="#"><i class="fa-light fa-circle-question"></i> Help</a>
+      <a href="#"><i class="fa-light fa-user-group"></i> Live collaboration...</a>
+      <a href="#"><i class="fa-light fa-gift"></i> Try Excalidraw Plus!</a>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-div-1">
+      <button class="zoom">-    100%    +</button>
+      <button class="undo-redo"><i class="fa-light fa-arrow-rotate-left"></i> <i class="fa-light fa-arrow-rotate-right"></i></button>
+    </div>
+    <div class="footer-div-2">
+      <a><i class="fa-duotone fa-shield-halved"></i></a>
+      <button><i class="fa-light fa-circle-question"></i></button>
+    </div>
+  </footer>
+  
 
 
-    <script src="./script.js"></script>
+  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 </html>
